@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transactional Email</title>
+    <style>
+        *{margin: 0;box-sizing: border-box;padding: 0;}
+        .logo{width: 100%; margin-bottom: 1rem;}
+        .logo img{max-width: 120px;}
+
+        .header{width: 100%;}
+        .header h2{font-size: 2.5rem; font-weight: 700;}
+        .header img{max-width: 180px; margin-top: -1rem;}
+        .header a{text-decoration: none; color: #fff;font-weight: 700;background-color: #3a1052;padding: 1rem 2rem;border-radius: .4rem;margin-top: 2rem;}
+        .header h4{font-size: 1.3rem; font-weight: 500; margin-top: 2rem;}
+
+        .summary{width: 100%;margin-top: 2rem;border: 1px solid #c5c4c4; background: #f3f3f3;padding: 1.5rem;}
+        .summary .order,.address{line-height: 2.1;}
+        .summary .order,.address{font-weight: 500;}
+
+        .items-header{width: 100%;margin: 2rem 0;background-color: #f3f3f3; padding: 1rem 0 1rem 1.5rem; border-top: 1px solid #c5c4c4; border-bottom: 1px solid #c5c4c4;}
+        .items-content{width: 100%; padding: 1.5rem 0 1.5rem 1.5rem; margin: 2rem 0;font-size: 1.07rem; font-weight: 500;}
+        .items-content img{max-width: 60px;margin: 1.5rem 0;}
+        .items-content .center{display: flex;align-items: center;}
+        .items-content .center span{margin-left: 2rem;}
+        .red{color: #e70b0b;}
+
+        .total{font-weight: 500;text-align: right; width: 100%;}
+
+        .contact{width: 100%; background-color: #3a1052;padding: 1.5rem 1rem;color: #fff;font-size: 1.1rem;border-top-left-radius: .3rem;border-top-right-radius: .3rem;}
+
+        .footer{width: 100%;padding: 2rem 0 .5rem 0;}
+        .footer b{border: 2.5px solid #6d6d6d;border-radius: 50%;padding: 1rem .5rem;margin: 2rem;}
+        .footer p{margin-top: 2rem;font-weight: 500;line-height: 1;}
+        .footer-logo img{max-width: 150px; margin-top: 2rem;}
+
+        @media (max-width:550px){
+            .wrapper{max-width: 500px; display: flex;align-items: center;justify-content: center;flex-direction: column;}
+            .summary{width: 90%;margin: 1rem auto;}
+            .items-header{width: 90%;margin: 1rem auto;}
+            .total{width: 100%;margin: 1rem;}
+            .contact{width: 90%;margin: 1rem auto;}
+            .footer{width: 90%;margin: 1rem auto;}
+        }
+        @media (max-width:450px){
+            .wrapper{max-width: 400px;}
+            .header h2{font-size: 2rem;}
+            .summary{width: 100%;font-size: .9rem; margin: 1rem auto;}
+            .items-header{width: 100%;margin: 1rem auto;}
+            .items-content .center span{margin-left: 1rem;}
+            .total{width: 100%;margin: 1rem 0;}
+            .contact{width: 100%;margin: 1rem auto;}
+            .footer{width: 100%;margin: 1rem auto;}
+            .footer b{margin: 2rem 0;}
+            .footer p{font-size: .8rem; font-weight: 500;line-height: 1;}
+        }
+        @media (max-width:380px){
+            .wrapper{max-width: 360px;}
+            .header h2{font-size: 2rem;}
+            .summary{width: 100%;margin: 1rem auto;}
+            .items-header{width: 100%;margin: 1rem auto;}
+            .items-content .center span{margin-left: 1rem;}
+            .total{width: 100%;margin: 1rem 0;}
+            .contact{width: 100%;margin: 1rem auto;}
+            .footer{width: 100%;margin: 1rem auto;}
+            .footer b{margin: 2rem 0;}
+        }
+
+    </style>
+</head>
+<body bgcolor="#f1f1f1" width="100%">
+    <table align="center" class="wrapper" width="600" style="width: 600px; margin: 0 auto; background-color: #fff; padding: 2rem 1rem; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
+        <tr>
+            <td>
+
+                            <!------- Logo section -------->
+
+                <table class="logo" align="center">
+                    <tr>
+                        <td align="center"><img src="./Images/logo.PNG" alt="logo"></td>
+                    </tr>
+                </table>
+
+                            <!------- Header section -------->
+
+                <table class="header" cellpadding="0" cellspacing="0" align="center">
+                    <tr>
+                        <td align="center"><h2>Your order is on its way.</h2></td>
+                    </tr>
+                    <tr>
+                        <td align="center"><img src="./Images/truck.PNG" alt="shipping-truck"></td>
+                    </tr>
+                    <tr>
+                        <td align="center"><a href="#">TRACK YOUR ORDER</a></td>
+                    </tr>
+                    <tr>
+                        <td align="center"><h4>Please allow 24 hours to track your order.</h4></td>
+                    </tr>
+                </table>
+
+                            <!------- Summary section -------->
+
+                <table class="summary" align="center">
+                    <tr>
+                        <td>
+                            <table class="order" cellspacing="0">
+                                <tr>
+                                    <strong style="font-size: 1.2rem;">SUMMARY:</strong>
+                                    <td>Order #:</td>
+                                    <td>44556678</td>
+                                </tr>
+                                <tr>
+                                    <td>Order Date: </td>
+                                    <td style="padding-left: .7rem;">Feb 2, 2023</td>
+                                </tr>
+                                <tr>
+                                    <td>Order Total:</td>
+                                    <td style="padding-left: .7rem;">$48.85</td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td>
+                            <table class="address">
+                                <tr>
+                                    <strong style="font-size: 1.2rem;">SHIPPING ADDRESS:</strong>
+                                    <td>Adam Jay<br>
+                                        246 Somewhere St <br>
+                                        Woodbank, AUS 76506 
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+
+                            <!------- Items section -------->
+
+                <table class="items-header" align="center">
+                    <tr>
+                        <td style="padding-bottom: 1.5rem;"><strong> ITEMS SHIPPED</strong></td>
+                        <td align="right">
+                            <td style="padding-bottom: 1.5rem;font-weight: 500;padding-right: 1rem;">QTY</td>
+                            <td style="padding-bottom: 1.5rem;font-weight: 500;">PRICE</td>
+                        </td>
+                    </tr>
+                    <tr class="items-content">
+                        <td class="center"><img src="./Images/toothbrush.png" alt="toothbrush"> <span>Sunstar Travel Toothbrush, Soft</span></td>
+                        <td>
+                            <td>1</td>
+                            <td class="red">$3.78</td>
+                        </td>
+                    </tr>
+                    <tr class="items-content">
+                        <td class="center"><img src="./Images/toothpaste.png" alt="toothbrush"> <span>Longrich Toothpaste, 200g</span></td>
+                        <td>
+                            <td>1</td>
+                            <td class="red">$4.20</td>
+                        </td>
+                    </tr>
+                    <tr class="items-content">
+                        <td class="center"><img src="./Images/body-lotion.png" alt="toothbrush"> <span>Nivea Body Lotion, 400ml</span></td>
+                        <td>
+                            <td>1</td>
+                            <td class="red">$10.32</td>
+                        </td>
+                    </tr>
+                    <tr class="items-content">
+                        <td class="center"><img src="./Images/body-spray.png" alt="toothbrush"> <span>Adidas Deo Body Spray, 150ml</span></td>
+                        <td>
+                            <td>2</td>
+                            <td class="red">$17.03</td>
+                        </td>
+                    </tr>
+                    <tr class="items-content">
+                        <td class="center"><img src="./Images/after-shave lotion.png" alt="toothbrush"> <span>Nivea After-shave Lotion, 200ml</span></td>
+                        <td>
+                            <td>1</td>
+                            <td class="red">$8.03</td>
+                        </td>
+                    </tr>
+                </table>
+                
+                            <!------- Total section -------->
+
+                <table class="total" align="right" cellspacing="20px">
+                    <tr>
+                        <td>Subtotal (5 Items):</td>
+                        <td>$43.36</td>
+                    </tr>
+                    <tr>
+                        <td>Flat-Rate Shipping:</td>
+                        <td>$4.95</td>
+                    </tr>
+                    <tr>
+                        <td>Estimated Tax:</td>
+                        <td>$0.54</td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 1.1rem;"><strong>Order Total:</strong></td>
+                        <td class="red" style="font-weight: 500;font-size: 1.1rem;">$48.85</td>
+                    </tr>
+                </table>  
+                
+                            <!------- Contact section -------->
+
+                <table class="contact" align="center">
+                    <tr>
+                        <td align="center">Call us at <b>1-800-234-5678</b> or reply to this email</td>
+                    </tr>
+                </table>
+
+                            <!------- Footer  -------->
+
+                <table class="footer" align="center">
+                    <tr>
+                        <td align="center" style="border-right: 1.5px solid #c5c4c4;"><b>24/7</b><br><p>CUSTOMER SERVICE</p></td>
+                        <td align="center" style="border-right: 1.5px solid #c5c4c4;"><b>FREE</b><br><p>FREE SHIPPING ORDERS $50+</p></td>
+                        <td align="center" style="border-right: 1.5px solid #c5c4c4;"><b>100%</b><br><p>SATISFACTION GUARANTEED</p></td>
+                        <td align="center"><b>&hookleftarrow;</b><br><p>HASSLE-FREE RETURNS</p></td>
+                    </tr>
+                </table>
+                <table class="footer-logo" width="100%" align="center">
+                    <tr>
+                        <td align="center"><img src="./Images/footer-logo.PNG" alt="logo"></td>
+                    </tr>
+                </table>
+
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
